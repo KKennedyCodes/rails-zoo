@@ -1,8 +1,8 @@
-<h1>Animals</h1>
-<ul>
-  <% @animals.each do |animal|  %>
-    <li>
-      <%= animal[:name] %>, Species: <%= animal[:species] %>
-    </li>
+
+<ol class="task-list">
+  <% @animal.each do |animal| %>
+    <li><h3><%= link_to animal.name, animal_path(animal) %></h3></li>
+    <%= link_to "Edit", edit_animal_path(animal) %>
+    <%= link_to "Delete", animal_path(animal), method: :delete, data: {confirm: "Are you sure?"} %>
   <% end %>
-</ul>
+</ol>

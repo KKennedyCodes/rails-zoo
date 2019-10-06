@@ -1,17 +1,27 @@
-ANIMALS = [
-{name: "Bobo", species: "Monkey", age: 4, sex: "M", notes: "Likes Ice Cream", img: "http://lorempixel.com/200/200/animals/"}
-]
-
 class AnimalsController < ApplicationController
   def index
-    @animals = ANIMALS
+    @animal = Animal.all
   end
   
   def show
-    animal_id = params[:id].to_i
-    @animal = ANIMALS[animal_id]
+    animal_id = params[:id]
+    @animal = Animal.find_by[:id]
     if @animal.nil?
       head :not_found
+      return
+    end
+  end
+  
+  def new
+    @animal = Animal.new
+  end
+  
+  def create
+    @animal = Animal.new(animal_params)
+    if @animal.save
+      redirect_to root_path
+    else
+      render :new
       return
     end
   end
@@ -19,9 +29,17 @@ class AnimalsController < ApplicationController
   def edit
   end
   
-  def find
-  end
-  
   def destroy
+    animal_id = params[:id]
+    @animal = Animal.find_by(id: animal_id)
+    @animal.delete
+    redirect_to root_path
   end
 end
+
+private
+
+def animal_params
+  return params.require(:animal).permit(:name, :species, :age, :sex, :notes)
+end
+
