@@ -1,0 +1,23 @@
+
+<p>Please provide the following information to <%= verb_name %> your animal:</p>
+
+<%= form_with model: @animal, class: "task-input" do |f| %>
+  <%= f.label :name %>  
+  <%= f.text_field :name %>
+
+  <%= f.label :species %>
+  <%= f.text_area :species %>
+
+  <%= f.label :age %>
+  <%= f.text_area :age %>
+
+  <%= f.label :sex %>
+  <%= f.radio_button :sex, "Male" %> Male 
+  <%= f.radio_button :sex, "Female" %> Female 
+  <%= f.radio_button :sex, "Unknown" %> Unknown 
+
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+
+  <%= f.submit "Save Animal", class: "save-button" %>
+<% end %>
