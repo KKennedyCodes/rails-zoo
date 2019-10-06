@@ -126,10 +126,10 @@ describe AnimalsController do
   
   # Uncomment and complete these tests for Wave 3
   describe "update" do
-    let (:animal) {
-      Animal.create(name: "sample animal", species: "sample species", age: 5, sex: "Unknown", notes: "sample notes")
-    }
-    get animal_path(animal.id)
+    #   let (:animal) {
+    #     Animal.create(name: "sample animal", species: "sample species", age: 5, sex: "Unknown", notes: "sample notes")
+    #   }
+    #   get animal_path(animal.id)
     # Note:  If there was a way to fail to save the changes to a animal, that would be a great
     #        thing to test.
     it "can update an existing animal" do

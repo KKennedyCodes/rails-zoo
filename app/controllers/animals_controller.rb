@@ -30,8 +30,9 @@ class AnimalsController < ApplicationController
     animal_id = params[:id]
     @animal = Animal.find_by(id: animal_id)
     
-    if @animal == nil?
-      redirect_to root_path
+    if @animal.nil? #not registering error/redirection
+      redirect_to root_path, status: 301
+      return
     end
   end
   
@@ -52,8 +53,14 @@ class AnimalsController < ApplicationController
   def destroy
     animal_id = params[:id]
     @animal = Animal.find_by(id: animal_id)
-    @animal.delete
-    redirect_to root_path
+    
+    if @animal.nil? #not registering error/redirection
+      redirect_to root_path, status: 301
+      return
+    else
+      @animal.delete
+      redirect_to root_path
+    end
   end
 end
 
