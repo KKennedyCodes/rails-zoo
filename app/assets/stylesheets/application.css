@@ -42,9 +42,11 @@ footer{
   left: 0;
   height: 5%;
   padding-top: 1%;
+  margin-top: 5%;
 }
 
 aside {
+  background-color: #D1F2EB;
   float: right;
   width: 80%;
   text-align: left;
@@ -67,4 +69,24 @@ aside {
 
 #show_task {
   font-size: 1.75rem;
+}
+
+#base_image {
+  position:fixed;
+  width: 100%;
+  bottom:0px;
+  left:0px;
+  z-index:-1;
+}
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #2874A6;
 }

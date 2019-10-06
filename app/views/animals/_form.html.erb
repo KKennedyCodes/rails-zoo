@@ -1,4 +1,4 @@
-
+<section = "form_style">
 <p>Please provide the following information to <%= verb_name %> your animal:</p>
 
 <%= form_with model: @animal, class: "task-input" do |f| %>
@@ -12,12 +12,14 @@
   <%= f.text_area :age %>
 
   <%= f.label :sex %>
-  <%= f.radio_button :sex, "Male" %> Male 
-  <%= f.radio_button :sex, "Female" %> Female 
-  <%= f.radio_button :sex, "Unknown" %> Unknown 
-
+  <section class = "radio_input">
+  <%= f.radio_button :sex, "Male" %> <%= f.label :male, class: "radio_label" %> 
+  <%= f.radio_button :sex, "Female" %> <%= f.label :female, class: "radio_label" %>
+  <%= f.radio_button :sex, "Unknown" %> <%= f.label :unknown, class: "radio_label" %>
+  </section>
   <%= f.label :notes %>
   <%= f.text_area :notes %>
 
   <%= f.submit "Save Animal", class: "save-button" %>
 <% end %>
+</section>

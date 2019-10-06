@@ -29,18 +29,19 @@ class AnimalsController < ApplicationController
   def edit
     animal_id = params[:id]
     @animal = Animal.find_by(id: animal_id)
+    
+    if @animal == nil?
+      redirect_to root_path
+    end
   end
   
   def update
-    # @animal = Animal.find_by(animal_params)
-    @animal.update
+    @animal = Animal.update(animal_params)
     redirect_to root_path
-    # if @animal.update
-    #   redirect_to root_path
-    # else
-    #   render :new
-    #   return
-    # end
+    
+    if @animal == nil?
+      redirect_to root_path
+    end
   end
   
   def destroy

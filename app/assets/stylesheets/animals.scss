@@ -17,12 +17,20 @@
     grid-column: 2;
     font-size: 14pt;
   }
-
+  
   textarea {
     min-height: 5em;
   }
 
-  check_box {
-    height: 200%;
+  radio_button {
+    display: inline;
+  }
+
+  .radio_label {
+    display: inline;
+  }
+
+  .radio_input {
+    grid-column: 2;
   }
 }
