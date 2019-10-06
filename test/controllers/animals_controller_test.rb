@@ -1,7 +1,10 @@
 require "test_helper"
 
 describe AnimalsController do
-  # it "does a thing" do
-  #   value(1+1).must_equal 2
-  # end
+  
+  it "should get index" do
+    get "/animals"
+    must_respond_with :success
+  end
+  
 end

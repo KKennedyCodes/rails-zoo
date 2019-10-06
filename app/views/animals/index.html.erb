@@ -1,0 +1,8 @@
+<h1>Animals</h1>
+<ul>
+  <% @animals.each do |animal|  %>
+    <li>
+      <%= animal[:name] %>, Species: <%= animal[:species] %>
+    </li>
+  <% end %>
+</ul>
