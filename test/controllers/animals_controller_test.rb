@@ -102,18 +102,27 @@ must_respond_with :redirect
 end
 end
 
-# # Unskip and complete these tests for Wave 3
-# describe "edit" do
-#   it "can get the edit page for an existing animal" do
-#     skip
-#     # Your code here
-#   end
-
-#   it "will respond with redirect when attempting to edit a nonexistant animal" do
-#     skip
-#     # Your code here
-#   end
-# end
+# Unskip and complete these tests for Wave 3
+describe "edit" do
+  it "can get the edit page for an existing animal" do
+    #skip
+    # Act
+    get edit_animal_path(animal.id)
+    
+    # Assertr
+    must_respond_with :success
+  end
+  
+  it "will respond with redirect when attempting to edit a nonexistant animal" do
+    #skip
+    # Your code here
+    # Act
+    get edit_animal_path(-1)
+    
+    # Assert
+    must_respond_with :redirect
+  end
+end
 
 # # Uncomment and complete these tests for Wave 3
 # describe "update" do
