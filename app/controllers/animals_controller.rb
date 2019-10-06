@@ -7,7 +7,7 @@ class AnimalsController < ApplicationController
     animal_id = params[:id]
     @animal = Animal.find_by(id: animal_id)
     if @animal.nil?
-      head :not_found
+      redirect_to root_path
       return
     end
   end
