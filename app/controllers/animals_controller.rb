@@ -36,11 +36,16 @@ class AnimalsController < ApplicationController
   end
   
   def update
-    @animal = Animal.update(animal_params)
-    redirect_to root_path
+    animal_id = params[:id]
+    @animal = Animal.find(animal_id)
+    @animal.update(name: params[:animal][:name], species: params[:animal][:species], age: params[:animal][:age], sex: params[:animal][:sex], notes: params[:animal][:notes] )
     
-    if @animal == nil?
+    if @animal.save
       redirect_to root_path
+      return
+    else
+      render :edit
+      return
     end
   end
   
@@ -57,4 +62,3 @@ private
 def animal_params
   return params.require(:animal).permit(:name, :species, :age, :sex, :notes)
 end
-

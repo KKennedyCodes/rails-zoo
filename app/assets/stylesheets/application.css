@@ -30,6 +30,7 @@
   margin-top: 8%;
   padding-left: 8%;
   font-family: Helvetica, sans-serif;
+  
 }
 
 footer{
@@ -52,6 +53,7 @@ aside {
   text-align: left;
   border-left: 4px solid #2874A6;
   padding-left: 30px;
+  padding-bottom: 100px;
 }
 
 .button {
